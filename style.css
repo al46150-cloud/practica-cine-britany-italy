@@ -7,10 +7,12 @@
 }
 
 body {
-    background-color: #121824;
-    color: #e2e8f0;
-    min-height: 100vh;
-    padding: 20px;
+  background-image: url("imgg/cinee.jpg"); 
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  background-attachment: fixed;"
+
 }
 
 header {
@@ -19,20 +21,20 @@ header {
 }
 
 header h1 {
-    color: #ff4757;
+    color: #050505;
     font-size: 2.2rem;
     margin-bottom: 5px;
 }
 
 header p {
-    color: #94a3b8;
+    color: #272728;
 }
 
 /* ERROR INTENCIONAL / REQUISITO CSS: 
    El contenedor principal debe alinear las dos tarjetas de forma paralela en pantallas grandes 
    y una debajo de la otra en pantallas móviles (responsivo). Actualmente bloquea el flujo. */
 .contenedor-principal {
-    display: block; /* CAMBIAR ESTO POR EL MODELO FLEXBOX ADECUADO */
+    display: flex; /* CAMBIAR ESTO POR EL MODELO FLEXBOX ADECUADO */
     max-width: 1000px;
     margin: 0 auto;
     gap: 20px;
@@ -44,7 +46,9 @@ header p {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     border: 1px solid #334155;
-    flex: 1; /* Esto ayudará cuando se active Flexbox en el contenedor */
+    flex: 2; /* Esto ayudará cuando se active Flexbox en el contenedor */
+    flex-direction: column;
+    flex-direction: wrap;
     margin-bottom: 20px; /* Temporal mientras no hay flex-wrap */
 }
 
@@ -160,6 +164,6 @@ hr {
 footer {
     text-align: center;
     margin-top: 40px;
-    color: #64748b;
+    color: #0a0b0b;
     font-size: 0.85rem;
 }

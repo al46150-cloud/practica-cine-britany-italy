@@ -31,16 +31,19 @@ document.getElementById('btn-calcular').addEventListener('click', function() {
     // Si el asiento es "vip", el cargo extra es de $50 pesos POR CADA BOLETO.
     if (asientoSeleccionado && asientoSeleccionado.value === 'vip') {
         // ESCRIBE AQUÍ TU CÓDIGO PARA CALCULAR LOS CARGOS EXTRA
+        cargosAsiento = cantidad * 50;
     }
+
 
     // Cálculo de Snacks / Combos
     let totalSnacks = 0;
     
     const comboPalomitas = document.getElementById('combo-palomitas');
     const comboHotdog = document.getElementById('combo-hotdog');
-    // REQUISITO JS 3: Declarar la variable para capturar el nuevo "combo-pareja" del HTML
+     // REQUISITO JS 3: Declarar la variable para capturar el nuevo "combo-pareja" del HTML
     
-
+    const combopareja = document.getElementById('combo-pareja');
+    
     if (comboPalomitas && comboPalomitas.checked) {
         totalSnacks += parseFloat(comboPalomitas.value);
     }
@@ -50,7 +53,9 @@ document.getElementById('btn-calcular').addEventListener('click', function() {
     }
 
     // REQUISITO JS 4: Sumar condicionalmente el valor de "combo-pareja" si el checkbox está activo
-    
+    if(combopareja && combopareja.checked){
+        totalSnacks += parseFloat(combopareja.value);
+    }
 
     // Cálculo final total
     let totalFinal = subtotalBoletos + cargosAsiento + totalSnacks;
